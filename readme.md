@@ -1,0 +1,3 @@
+# zkt6502 Single Board Computer
+
+Simple 6502 based computer that I've wanted to build for 14 years....
