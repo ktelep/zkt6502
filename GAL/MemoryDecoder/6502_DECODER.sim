@@ -1,0 +1,41 @@
+%SIGNAL
+PIN  19 = !ACIA1_sel 
+PIN  20 = !ACIA2_sel 
+PIN  18 = !RAM_sel 
+PIN  15 = !ROM_sel 
+PIN  16 = !VIA1_sel 
+PIN  17 = !VIA2_sel 
+PIN   2 =  addr8 
+PIN   3 =  addr9 
+PIN   4 =  addr10 
+PIN   5 =  addr11 
+PIN   6 =  addr12 
+PIN   7 =  addr13 
+PIN   8 =  addr14 
+PIN   9 =  addr15 
+PIN  10 =  p2clock 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+ACIA1_sel =>
+    addr8 & addr9 & !addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
+
+ACIA2_sel =>
+    !addr8 & !addr9 & addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
+
+RAM_sel =>
+    !addr15 & p2clock
+
+ROM_sel =>
+    addr13 & addr14 & addr15
+
+VIA1_sel =>
+    addr8 & !addr9 & !addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
+
+VIA2_sel =>
+    !addr8 & addr9 & !addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
+
+%END

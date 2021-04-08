@@ -1,0 +1,174 @@
+
+*******************************************************************************
+                                 6502_Decoder
+*******************************************************************************
+
+CUPL(WM)        5.0a Serial# 60008009
+Device          g20v8as  Library DLIB-h-40-1
+Created         Thu Apr 08 08:58:26 2021
+Name            6502_Decoder 
+Partno          00 
+Revision        01 
+Date            4/7/2021 
+Designer        Kurt Telep 
+Company         Hobbiest 
+Assembly        None 
+Location        
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+ACIA1_sel =>
+    addr8 & addr9 & !addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
+
+ACIA2_sel =>
+    !addr8 & !addr9 & addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
+
+RAM_sel =>
+    !addr15 & p2clock
+
+ROM_sel =>
+    addr13 & addr14 & addr15
+
+VIA1_sel =>
+    addr8 & !addr9 & !addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
+
+VIA2_sel =>
+    !addr8 & addr9 & !addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+ !  ACIA1_sel                   19       V        1       8       1     
+ !  ACIA2_sel                   20       V        1       8       1     
+ !  RAM_sel                     18       V        1       8       1     
+ !  ROM_sel                     15       V        1       8       1     
+ !  VIA1_sel                    16       V        1       8       1     
+ !  VIA2_sel                    17       V        1       8       1     
+    addr8                       2        V        -       -       -     
+    addr9                       3        V        -       -       -     
+    addr10                      4        V        -       -       -     
+    addr11                      5        V        -       -       -     
+    addr12                      6        V        -       -       -     
+    addr13                      7        V        -       -       -     
+    addr14                      8        V        -       -       -     
+    addr15                      9        V        -       -       -     
+    p2clock                     10       V        -       -       -     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+
+
+===============================================================================
+                                   Fuse Plot
+===============================================================================
+
+Syn   02704 - Ac0   02705 x 
+
+Pin #22  02560  Pol x  02632  Ac1 - 
+ 00000 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00040 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00080 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00120 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00200 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00240 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00280 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #21  02561  Pol x  02633  Ac1 - 
+ 00320 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00360 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00400 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00440 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00480 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00520 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00560 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00600 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #20  02562  Pol x  02634  Ac1 x 
+ 00640 -x---x--x----x--x---x----x--x----------- 
+ 00680 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00720 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00760 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00800 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00840 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00880 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 00920 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #19  02563  Pol x  02635  Ac1 x 
+ 00960 x---x----x---x--x---x----x--x----------- 
+ 01000 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01040 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01080 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01120 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01200 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01240 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #18  02564  Pol x  02636  Ac1 x 
+ 01280 -----------------------------x--x------- 
+ 01320 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01360 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01400 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01440 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01480 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01520 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01560 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #17  02565  Pol x  02637  Ac1 x 
+ 01600 -x--x----x---x--x---x----x--x----------- 
+ 01640 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01680 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01720 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01760 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01800 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01840 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 01880 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #16  02566  Pol x  02638  Ac1 x 
+ 01920 x----x---x---x--x---x----x--x----------- 
+ 01960 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02000 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02040 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02080 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02120 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02200 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+Pin #15  02567  Pol x  02639  Ac1 x 
+ 02240 --------------------x---x---x----------- 
+ 02280 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02320 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02360 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02400 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02440 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02480 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+ 02520 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+
+
+LEGEND    X : fuse not blown 
+          - : fuse blown 
+
+===============================================================================
+                                 Chip Diagram
+===============================================================================
+
+                               ______________
+                              | 6502_Decoder |
+                          x---|1           24|---x Vcc                      
+                    addr8 x---|2           23|---x                          
+                    addr9 x---|3           22|---x                          
+                   addr10 x---|4           21|---x                          
+                   addr11 x---|5           20|---x !ACIA2_sel               
+                   addr12 x---|6           19|---x !ACIA1_sel               
+                   addr13 x---|7           18|---x !RAM_sel                 
+                   addr14 x---|8           17|---x !VIA2_sel                
+                   addr15 x---|9           16|---x !VIA1_sel                
+                  p2clock x---|10          15|---x !ROM_sel                 
+                          x---|11          14|---x                          
+                      GND x---|12          13|---x                          
+                              |______________|
+

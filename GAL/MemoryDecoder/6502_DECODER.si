@@ -1,0 +1,38 @@
+Name     6502_Decoder;
+PartNo   00;
+Date     4/7/2021;
+Revision 01;
+Designer Kurt Telep;
+Company  Hobbiest;
+Assembly None;
+Location ;
+Device   g20v8a;
+
+
+ORDER: "Inputs: P2: ", p2clock, " MSB: ", addr15..addr12, " LSB: ", addr11..addr8, " Outputs: ", ROM_sel, RAM_sel, VIA1_sel, VIA2_sel, ACIA1_sel, ACIA2_sel; 
+
+
+VECTORS:
+$MSG  "ROM Enabled on E000-FFFF";
+$MSG  "---------------------------------";
+0 'F' 'F' ******
+0 'F' '0' ******
+0 'E' 'F' ******
+0 'E' '0' ******
+$MSG  "";
+$MSG  "RAM Enabled for 0000-7FFF only on p2 clock";
+$MSG  "---------------------------------";
+0 '0' '0' ******
+1 '0' '0' ******
+0 '7' 'F' ******
+1 '7' 'F' ******
+$MSG  "";
+$MSG  "VIA1 and VIA2 on 0x3100 and 0x3200";
+$MSG  "---------------------------------";
+0 'B' '1' ******
+0 'B' '2' ******
+$MSG  "";
+$MSG  "ACIA1 and ACIA2 on 0x3300 and 0x3400";
+$MSG  "---------------------------------";
+0 'B' '3' ******
+0 'B' '4' ******

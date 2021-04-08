@@ -1,0 +1,52 @@
+Name     6502_Decoder ;
+PartNo   00 ;
+Date     4/7/2021 ;
+Revision 01 ;
+Designer Kurt Telep ;
+Company  Hobbiest ;
+Assembly None ;
+Location  ;
+Device   g20v8a;
+
+/* *************** INPUT PINS ********************* */
+PIN [9..2] = [addr15..8];  /* Incoming high address lines */
+PIN 10 = p2clock; /* Phase 2 Clock for RAM */
+
+/* *************** OUTPUT PINS ********************* */
+PIN 15    = !ROM_sel  ; /*    OE & CE tied together,       */ 
+PIN 16    = !VIA1_sel ; /*                                 */ 
+PIN 17    = !VIA2_sel ; /*                                 */ 
+PIN 18    = !RAM_sel  ; /*    NAND with Phase2 clock?       */
+PIN 19    = !ACIA1_sel; /*                                 */
+PIN 20    = !ACIA2_sel;
+
+/* Memory Map    */
+/* 0x0000 - 0x0FFF  RAM   */
+/* 0x1000 - 0x1FFF  RAM   */
+/* 0x2000 - 0x2FFF  RAM   */
+/* 0x3000 - 0x3FFF  RAM   */
+/* 0x4000 - 0x4FFF  RAM   */
+/* 0x5000 - 0x5FFF  RAM   */
+/* 0x6000 - 0x6FFF  RAM   */
+/* 0x7000 - 0x7FFF  RAM   */
+/* 0x8000 - 0x8FFF  RES   */
+/* 0x9000 - 0x9FFF  RES   */
+/* 0xA000 - 0xAFFF  RES   */
+/* 0xB000 - 0xB0FF  MEMORY CONTROL??   */
+/* 0xB100 - 0xB1FF  VIA1   */
+/* 0xB200 - 0xB2FF  VIA2   */
+/* 0xB300 - 0xB3FF  ACIA1  */
+/* 0xB400 - 0xB4FF  ACIA2  */
+/* 0xC000 - 0xCFFF  RES    */
+/* 0xD000 - 0xDFFF  RES    */
+/* 0xE000 - 0xEFFF  ROM    */
+/* 0xF000 - 0xFFFF  ROM    */
+
+
+ROM_sel = addr15 & addr14 & addr13;   /* 0xE000 to 0xFFFF Only 8k today*/
+RAM_sel = !addr15 & p2clock;          /* 0x0000 to 0x7FFF */             
+
+VIA1_sel = addr15 & !addr14 & addr13 & addr12 & !addr11 & !addr10 & !addr9 & addr8;  /* 0xB100 to 0xB1FF */ 
+VIA2_sel = addr15 & !addr14 & addr13 & addr12 & !addr11 & !addr10 & addr9 & !addr8;  /* 0xB200 to 0xB2FF */ 
+ACIA1_sel = addr15 & !addr14 & addr13 & addr12 & !addr11 & !addr10 & addr9 & addr8;  /* 0xB300 to 0xB3FF */ 
+ACIA2_sel = addr15 & !addr14 & addr13 & addr12 & !addr11 & addr10 & !addr9 & !addr8; /* 0xB400 to 0xB4FF */ 
