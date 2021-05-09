@@ -13,12 +13,14 @@ ORDER: "Inputs: P2: ", p2clock, " MSB: ", addr15..addr12, " LSB: ", addr11..addr
 
 
 VECTORS:
-$MSG  "ROM Enabled on E000-FFFF";
+$MSG  "ROM Enabled on C000-FFFF";
 $MSG  "---------------------------------";
 0 'F' 'F' ******
 0 'F' '0' ******
 0 'E' 'F' ******
 0 'E' '0' ******
+0 'C' 'F' ******
+0 'C' '0' ******
 $MSG  "";
 $MSG  "RAM Enabled for 0000-7FFF only on p2 clock";
 $MSG  "---------------------------------";

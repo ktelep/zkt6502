@@ -5,7 +5,7 @@
 
 CUPL(WM)        5.0a Serial# 60008009
 Device          g20v8as  Library DLIB-h-40-1
-Created         Thu Apr 08 08:58:26 2021
+Created         Sun May 09 13:42:02 2021
 Name            6502_Decoder 
 Partno          00 
 Revision        01 
@@ -29,7 +29,7 @@ RAM_sel =>
     !addr15 & p2clock
 
 ROM_sel =>
-    addr13 & addr14 & addr15
+    addr14 & addr15
 
 VIA1_sel =>
     addr8 & !addr9 & !addr10 & !addr11 & addr12 & addr13 & !addr14 & addr15
@@ -139,7 +139,7 @@ Pin #16  02566  Pol x  02638  Ac1 x
  02160 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
  02200 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
 Pin #15  02567  Pol x  02639  Ac1 x 
- 02240 --------------------x---x---x----------- 
+ 02240 ------------------------x---x----------- 
  02280 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
  02320 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
  02360 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 

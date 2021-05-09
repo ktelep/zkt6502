@@ -37,13 +37,13 @@ PIN 20    = !ACIA2_sel;
 /* 0xB200 - 0xB2FF  VIA2   */
 /* 0xB300 - 0xB3FF  ACIA1  */
 /* 0xB400 - 0xB4FF  ACIA2  */
-/* 0xC000 - 0xCFFF  RES    */
-/* 0xD000 - 0xDFFF  RES    */
+/* 0xC000 - 0xCFFF  ROM    */
+/* 0xD000 - 0xDFFF  ROM    */
 /* 0xE000 - 0xEFFF  ROM    */
 /* 0xF000 - 0xFFFF  ROM    */
 
 
-ROM_sel = addr15 & addr14 & addr13;   /* 0xE000 to 0xFFFF Only 8k today*/
+ROM_sel = addr15 & addr14;   /* 0xC000 to 0xFFFF Only 16k today*/
 RAM_sel = !addr15 & p2clock;          /* 0x0000 to 0x7FFF */             
 
 VIA1_sel = addr15 & !addr14 & addr13 & addr12 & !addr11 & !addr10 & !addr9 & addr8;  /* 0xB100 to 0xB1FF */ 
